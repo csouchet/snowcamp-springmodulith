@@ -13,7 +13,12 @@ public class ChartreuseShopApplicationTest {
     private final ApplicationModules modules = ApplicationModules.of(ChartreuseShopApplication.class);
 
     @Test
-    void log_modules(){
+    void verifyModules() {
+        modules.verify();
+    }
+
+    @Test
+    void logModules(){
         LOGGER.info(modules.toString());
     }
 
