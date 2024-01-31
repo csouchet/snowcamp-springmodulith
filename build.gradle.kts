@@ -39,8 +39,7 @@ dependencies {
 	runtimeOnly("io.opentelemetry:opentelemetry-exporter-otlp")
 	runtimeOnly("io.micrometer:micrometer-registry-otlp")
 
-	// TODO STAGE_MODULITH_EXTERNAL_EVENT - Uncomment it
-//	 runtimeOnly("org.springframework.modulith:spring-modulith-events-kafka")
+	runtimeOnly("org.springframework.modulith:spring-modulith-events-kafka")
 
 	// TODO STAGE_MODULITH_OBSERVABILITY - Uncomment it
 //	runtimeOnly("org.springframework.modulith:spring-modulith-actuator")
