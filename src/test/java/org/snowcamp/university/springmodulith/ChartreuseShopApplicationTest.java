@@ -23,9 +23,20 @@ public class ChartreuseShopApplicationTest {
     }
 
     @Test
-    void writeDocumentationSnippets() {
+    void generateDocumentationAsPlantUml() {
         new Documenter(modules)
                 .writeModulesAsPlantUml()
                 .writeIndividualModulesAsPlantUml();
+    }
+
+    @Test
+    void generateDocumentationAsC4() {
+        ApplicationModules modules = ApplicationModules.of(ChartreuseShopApplication.class);
+        Documenter.CanvasOptions canvasOptions = Documenter.CanvasOptions.defaults()
+                .revealInternals();
+        Documenter.DiagramOptions diagramOptions = Documenter.DiagramOptions.defaults()
+                .withStyle(Documenter.DiagramOptions.DiagramStyle.C4);
+        new Documenter(modules)
+                .writeDocumentation(diagramOptions, canvasOptions);
     }
 }
